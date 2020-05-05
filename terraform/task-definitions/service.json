@@ -1,0 +1,34 @@
+[
+  {
+    "name": "opengp",
+    "image": "270649891125.dkr.ecr.eu-west-2.amazonaws.com/opengp:0.1.3",
+    "cpu": 1024,
+    "memory": 950,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 8080,
+        "hostPort": 80
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "secretOptions": null,
+      "options": {
+        "awslogs-group": "/ecs/opengp",
+        "awslogs-region": "eu-west-2",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+
+    "environment": [
+      {"name": "DB_DATABASE" , "value":  "${db_name}"},
+      {"name": "DB_HOST" , "value":  "${db_host}"},
+      {"name": "DB_USERNAME" , "value":  "${db_user}"},
+      {"name": "DB_PASSWORD" , "value":  "${db_pass}"},
+      {"name": "DB_CREATE_TABLES" , "value":  "true"},
+      {"name": "DB_AUTO_UPDATE" , "value":  "true"},
+      {"name": "MODULE_WEB_ADMIN" , "value":  "true"}
+    ]
+  }
+]
