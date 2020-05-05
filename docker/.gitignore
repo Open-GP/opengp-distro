@@ -1,0 +1,5 @@
+dbdump
+web/modules
+web/openmrs-distro.properties
+web/openmrs.war
+web/owa

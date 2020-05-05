@@ -1,0 +1,1 @@
+export CATALINA_OPTS="-DOPENMRS_INSTALLATION_SCRIPT=/usr/local/tomcat/openmrs-server.properties -DOPENMRS_APPLICATION_DATA_DIRECTORY=/usr/local/tomcat/.OpenMRS"
