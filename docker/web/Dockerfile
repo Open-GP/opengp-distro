@@ -16,6 +16,10 @@ RUN sed -i '/Connector port="8080"/a URIEncoding="UTF-8" relaxedPathChars="[]|" 
 RUN chmod +x /usr/local/tomcat/wait-for-it.sh
 RUN chmod +x /usr/local/tomcat/startup.sh
 
+# Add redirect from / to /openmrs
+RUN rm -rf /usr/local/tomcat/webapps/ROOT/*
+COPY tomcat/index.jsp /usr/local/tomcat/webapps/ROOT/index.jsp
+
 # For documentation purpose only
 COPY openmrs-distro.properties /root/openmrs-distro.properties
 COPY Dockerfile /root/Dockerfile
