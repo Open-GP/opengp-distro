@@ -31,7 +31,7 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Setting up the OpenMRS sdk
-        run: mvn org.openmrs.maven.plugins:openmrs-sdk-maven-plugin:setup-sdk
+        run: echo "n" | mvn org.openmrs.maven.plugins:openmrs-sdk-maven-plugin:setup-sdk
       - name: Building distro
         run: mvn openmrs-sdk:build-distro -Ddir=docker
 
