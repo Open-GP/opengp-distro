@@ -18,6 +18,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.get_version.version}}
     steps:
       - uses: actions/checkout@v2
 
@@ -49,6 +51,10 @@ jobs:
 
       - name: Building distro
         run: ./build-docker-image-for-distro.sh
+
+      - name: Set version as output
+        id: version
+        run: echo "::set-output name=version::$(./get-version.sh)"
 
       - name: Logout of Amazon ECR
         if: always()
@@ -87,4 +93,4 @@ jobs:
         tf_actions_working_dir: ${{ env.tf_working_dir }}
         tf_actions_comment: false
       env:
-        TF_VAR_opengp_version: '0.1.4'
+        TF_VAR_opengp_version: needs.build.outputs.version
