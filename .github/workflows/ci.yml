@@ -19,7 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.get_version.version}}
+      version: ${{ steps.get_version.outputs.version}}
     steps:
       - uses: actions/checkout@v2
 
