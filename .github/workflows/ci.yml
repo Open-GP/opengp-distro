@@ -85,6 +85,9 @@ jobs:
         tf_actions_working_dir: ${{ env.tf_working_dir }}
         tf_actions_comment: false
 
+    - name: Test output
+      run: echo "${{ needs.build.outputs.version }}"
+
     - name: 'Terraform Apply'
       uses: hashicorp/terraform-github-actions@master
       with:
@@ -93,4 +96,4 @@ jobs:
         tf_actions_working_dir: ${{ env.tf_working_dir }}
         tf_actions_comment: false
       env:
-        TF_VAR_opengp_version: needs.build.outputs.version
+        TF_VAR_opengp_version: ${{ needs.build.outputs.version }}
