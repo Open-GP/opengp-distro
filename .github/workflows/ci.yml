@@ -51,8 +51,8 @@ jobs:
         run: ./build-docker-image-for-distro.sh
 
       - name: Logout of Amazon ECR
-          if: always()
-          run: docker logout ${{ steps.login-ecr.outputs.registry }}
+        if: always()
+        run: docker logout ${{ steps.login-ecr.outputs.registry }}
 
   deploy-to-ecs:
     # The type of runner that the job will run on
