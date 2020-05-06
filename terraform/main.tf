@@ -112,6 +112,7 @@ module "opengp" {
   db_user = local.db_user
   db_host = module.db.address
   target_group_arn = module.alb.target_group_arns[0]
+  opengp_version = var.opengp_version
 }
 
 #----- ECS  Resources--------

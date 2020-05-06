@@ -12,6 +12,7 @@ data "template_file" "task_definition" {
     db_user = var.db_user
     db_pass = var.db_pass
     db_name = var.db_name
+    opengp_version = var.opengp_version
   }
 }
 

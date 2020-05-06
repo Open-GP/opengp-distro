@@ -28,3 +28,8 @@ variable "target_group_arn" {
   description = "Target group"
   type = string
 }
+
+variable "opengp_version" {
+  description = "The version to be deployed"
+  type = string
+}
