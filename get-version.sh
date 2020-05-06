@@ -1,0 +1,1 @@
+grep "version=*" openmrs-distro.properties | cut -d'=' -f2
