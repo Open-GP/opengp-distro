@@ -279,3 +279,20 @@ resource "random_password" "db-password" {
   special = true
   override_special = "_%@"
 }
+
+data "aws_route53_zone" "demo-opengp" {
+  name         = "demo.opengp.org"
+  private_zone = false
+}
+
+resource "aws_route53_record" "demo" {
+  zone_id = data.aws_route53_zone.demo-opengp.id
+  name    = "demo.opengp.org"
+  type    = "A"
+
+  alias {
+    name                   = module.alb.this_lb_dns_name
+    zone_id                = module.alb.this_lb_zone_id
+    evaluate_target_health = true
+  }
+}
