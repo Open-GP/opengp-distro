@@ -49,10 +49,13 @@ jobs:
       - name: Setting up the OpenMRS sdk
         run: echo "n" | mvn org.openmrs.maven.plugins:openmrs-sdk-maven-plugin:setup-sdk
 
-      - name: Building distro
-        run: ./build-docker-image-for-distro.sh
+      - name: Maven Building distro
+        run: mvn openmrs-sdk:build-distro -B -Ddir=docker
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Building distro
+        run: ./build-docker-image-for-distro.sh
 
       - name: Set version as output
         id: get_version
