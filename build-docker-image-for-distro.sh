@@ -1,4 +1,7 @@
 #mvn openmrs-sdk:build-distro -B -Ddir=docker
+echo "-----"
+cat ~/.m2/settings.xml
+echo "-----"
 version=$(./get-version.sh)
 
 docker build docker/web -t opengp/opengp:$version
