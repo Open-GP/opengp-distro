@@ -27,10 +27,21 @@ If you made any changes (modified modules/owas/war) to the distro run:
 $ docker-compose up --build
 ```
 
+Due to layer caching in while building the docker container, the command above does work properly when the modules folder is changes
+Please use:
+```
+$ sh start.sh
+```
+
 If you want to destroy containers and delete any left over volumes and data when doing changes to the docker
 configuration and images run:
 ```
 $ docker-compose down -v
+```
+
+Alternatively: 
+```shell script
+$ sh nuke-dockers.sh
 ```
 
 In the development mode the OpenMRS server is run in a debug mode and exposed at port 1044. You can change the port by

@@ -11,11 +11,9 @@ services:
       MYSQL_USER: openmrs
       MYSQL_PASSWORD: Admin123
     volumes:
-      - ./dbdump:/docker-entrypoint-initdb.d
       - db-data:/var/lib/mysql
 
   web:
-    build: web
     image: opengp:local
     depends_on:
       - db
@@ -24,8 +22,8 @@ services:
       DB_HOST: db
       DB_USERNAME: openmrs
       DB_PASSWORD: Admin123
-      DB_CREATE_TABLES: 'false'  # change to 'true' if using an empty database
-      DB_AUTO_UPDATE: 'false'    # change to 'true' if using an empty database
+      DB_CREATE_TABLES: 'true'  # change to 'true' if using an empty database
+      DB_AUTO_UPDATE: 'true'    # change to 'true' if using an empty database
       MODULE_WEB_ADMIN: 'true'   # allow web admin on OpenMRS
     volumes:
       - web-data:/usr/local/tomcat/.OpenMRS
