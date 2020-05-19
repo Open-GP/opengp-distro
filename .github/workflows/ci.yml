@@ -46,6 +46,9 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
+      - name: Debugging
+        run: cat ~/.m2/settings.xml
+
       - name: Setting up the OpenMRS sdk
         run: echo "n" | mvn org.openmrs.maven.plugins:openmrs-sdk-maven-plugin:setup-sdk
 
