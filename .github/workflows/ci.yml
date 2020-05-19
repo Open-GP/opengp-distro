@@ -51,6 +51,8 @@ jobs:
 
       - name: Building distro
         run: ./build-docker-image-for-distro.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set version as output
         id: get_version
