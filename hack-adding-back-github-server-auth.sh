@@ -1,0 +1,1 @@
+cp settings-with-openmrs-and-github.xml ~/.m2/settings.xml
