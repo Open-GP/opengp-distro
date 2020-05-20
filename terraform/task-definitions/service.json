@@ -3,7 +3,7 @@
     "name": "opengp",
     "image": "270649891125.dkr.ecr.eu-west-2.amazonaws.com/opengp:${opengp_version}",
     "cpu": 1024,
-    "memory": 950,
+    "memory": 1920,
     "essential": true,
     "portMappings": [
       {

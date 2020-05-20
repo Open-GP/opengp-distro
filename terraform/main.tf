@@ -144,7 +144,7 @@ module "this" {
   lc_name = local.ec2_resources_name
 
   image_id             = data.aws_ami.amazon_linux_ecs.id
-  instance_type        = "t2.micro"
+  instance_type        = "t2.small"
   security_groups      = [module.vpc.default_security_group_id, aws_security_group.ec2_instance.id]
   iam_instance_profile = aws_iam_instance_profile.this.id
   user_data            = data.template_file.user_data.rendered
