@@ -5,4 +5,4 @@ cd $DIR || exit
 pwd
 cp -f $1/omod/target/gpconnect*.omod ./docker/web/modules/
 cd docker || exit
-sh start.sh
+sh start.sh $2
