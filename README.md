@@ -16,15 +16,42 @@ The demo is deployed on AWS using ECS. For provisioning and deployment terraform
 
 Prerequisites:
 
-1. Docker https://docs.docker.com/get-docker/
+1. [Docker](https://docs.docker.com/get-docker/)
 2. Java 8+ 
-3. Maven https://maven.apache.org/install.html
-4. OpenMRS SDK https://wiki.openmrs.org/display/docs/OpenMRS+SDK#OpenMRSSDK-Installation (the sdk is a maven plugin)  
-5. (Optionally) Postman https://www.postman.com/downloads/
+3. [Maven](https://maven.apache.org/install.html)
+4. [OpenMRS SDK](https://wiki.openmrs.org/display/docs/OpenMRS+SDK#OpenMRSSDK-Installation) (the sdk is a maven plugin)  
+5. (Optionally) [Postman](https://www.postman.com/downloads/)
 
-Starting OpenGP locally:
-1. `mvn openmrs-sdk:build-distro -Ddir=docker`
-2. `docker-compose up -d` in the`docker` folder
-3. Go to `localhost:8080/openmrs` wait to be redirected to a login page
-4. Use `admin` and ask for the default password
+Starting OpenGp locally:
 
+For the ***first*** time?
+> See our [wiki]()
+
+<br/>
+
+Subsequent times, after making changes?
+
+In ```opengp-distro/docker```:
+
+> Check the containers currently running
+```shell script
+cd docker && docker-compose ps
+```
+<br/>
+
+> Stop the web container & rebuild with new config
+```shell script
+docker-compose stop web && docker-compose rm -f web
+```
+<br/>
+
+> Start the container
+```shell script
+cd .. && sh update_gpconnect_and_start.sh "../openmrs-module-gpconnect" web
+```
+<br/>
+
+> Check the docker logs
+```shell script
+cd docker && docker-compose logs -f
+```
