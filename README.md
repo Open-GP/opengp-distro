@@ -1,10 +1,13 @@
 # OpenGP EHR system
-OpenGP is an OpenMRS distribution aimed at GPs. Read more about what OpenMRS is [here](https://openmrs.org) and more about distributions in 
-context of OpenMRS [here](https://wiki.openmrs.org/display/docs/OpenMRS+Distributions)
+OpenGP is an OpenMRS distribution aimed at General Practitioners (GPs).
+
+## Context
+* [OpenMRS](https://openmrs.org) 
+* [OpenMRS distributions](https://wiki.openmrs.org/display/docs/OpenMRS+Distributions)
+* [NHS and General Practitioners](https://www.healthcareers.nhs.uk/explore-roles/doctors/roles-doctors/general-practice-gp)
 
 ## Demo
-There a deployment of OpenGP found at [demo.opengp.org](http://demo.opengp.org) - at the moment is just a vanilla OpenMRS distributions
-with no enhancements
+A deployment of OpenGP can be found at [demo.opengp.org](http://demo.opengp.org).
 
 ## Deployment
 The demo is deployed on AWS using ECS. For provisioning and deployment terraform is used.
@@ -14,22 +17,22 @@ The demo is deployed on AWS using ECS. For provisioning and deployment terraform
 
 ## Developer setup
 
-Prerequisites:
+### Prerequisites:
 
 1. [Docker](https://docs.docker.com/get-docker/)
-2. Java 8+ 
+2. [Java 8+](https://java.com/en/download/help/download_options.xml)
 3. [Maven](https://maven.apache.org/install.html)
 4. [OpenMRS SDK](https://wiki.openmrs.org/display/docs/OpenMRS+SDK#OpenMRSSDK-Installation) (the sdk is a maven plugin)  
-5. (Optionally) [Postman](https://www.postman.com/downloads/)
+5. [Postman](https://www.postman.com/downloads/) (Optional) 
 
-Starting OpenGp locally:
+### On Starting OpenGp locally:
 
-For the ***first*** time?
-> See our [wiki]()
+Starting OpenGp for the ***first*** time:
+> See our [wiki](https://github.com/Open-GP/opengp-distro/wiki/Onboarding-Developer-Setup)
 
 <br/>
 
-Subsequent times, after making changes?
+Starting OpenGp ***subsequent times*** after code changes:
 
 In ```opengp-distro/docker```:
 
