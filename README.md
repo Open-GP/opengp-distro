@@ -32,6 +32,26 @@ Starting OpenGp for the ***first*** time:
 
 <br/>
 
+Starting OpenGp ***when doing QA***:
+
+In ```opengp-distro/docker```:
+
+> Make sure Maven builds the most up to date version of the code
+```shell script
+mvn openmrs-sdk:build-distro -Ddir=docker
+```
+<br/>
+
+> Delete the volumes to build the distro correctly
+```shell script
+docker-compose down -v
+```
+<br/>
+
+> Then follow the steps below
+
+<br/>
+
 Starting OpenGp ***subsequent times*** after code changes:
 
 In ```opengp-distro/docker```:
