@@ -34,7 +34,7 @@ Starting OpenGp for the ***first*** time:
 
 Starting OpenGp ***when doing QA***:
 
-In ```opengp-distro/docker```:
+In ```opengp-distro```:
 
 > Make sure Maven builds the most up to date version of the code
 ```shell script
@@ -44,7 +44,7 @@ mvn openmrs-sdk:build-distro -Ddir=docker
 
 > Delete the volumes to build the distro correctly
 ```shell script
-docker-compose down -v
+cd docker && docker-compose down -v
 ```
 <br/>
 
@@ -58,7 +58,7 @@ In ```opengp-distro/docker```:
 
 > Check the containers currently running
 ```shell script
-cd docker && docker-compose ps
+docker-compose ps
 ```
 <br/>
 
@@ -72,7 +72,7 @@ docker-compose stop web && docker-compose rm -f web
 ```shell script
 cd .. && sh update_gpconnect_and_start.sh "../openmrs-module-gpconnect" web
 ```
-<br/>
+<br/>`
 
 > Check the docker logs
 ```shell script
