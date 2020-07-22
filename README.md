@@ -72,7 +72,7 @@ docker-compose stop web && docker-compose rm -f web
 ```shell script
 cd .. && sh update_gpconnect_and_start.sh "../openmrs-module-gpconnect" web
 ```
-<br/>`
+<br/>
 
 > Check the docker logs
 ```shell script
